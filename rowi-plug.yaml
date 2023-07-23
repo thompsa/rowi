@@ -13,9 +13,8 @@ esp32:
   board: nodemcu-32s
 
 wifi:
-  ap: {}
-
-captive_portal:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
 
 logger:
 
@@ -23,10 +22,15 @@ api:
 
 ota:
 
-web_server:
-
 dashboard_import:
-  package_import_url: github://vt-vaio/rowi/rowi-plug.yaml@main
+  package_import_url: github://vt-vaio/thompsa/rowi-plug.yaml@main
+
+esp32_ble_tracker:
+  scan_parameters:
+    active: true
+
+bluetooth_proxy:
+  active: true
 
 binary_sensor:
   - platform: gpio
@@ -87,14 +91,4 @@ sensor:
     humidity:
       name: "${friendly_name} Humidity"
 
-  - platform: uptime
-    name: "${friendly_name} Uptime"
-    disabled_by_default: true
-    id: uptime_sensor
-
-text_sensor:
-  - platform: wifi_info
-    ip_address:
-      name: "${friendly_name} IP Address"
-      disabled_by_default: true
 
