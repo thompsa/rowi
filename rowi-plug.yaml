@@ -23,7 +23,7 @@ api:
 ota:
 
 dashboard_import:
-  package_import_url: github://vt-vaio/thompsa/rowi-plug.yaml@main
+  package_import_url: github://thompsa/rowi/rowi-plug.yaml@main
 
 esp32_ble_tracker:
   scan_parameters:
