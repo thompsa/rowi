@@ -20,6 +20,7 @@ logger:
 api:
 
 ota:
+  platform: esphome
 
 dashboard_import:
   package_import_url: github://thompsa/rowi/rowi-plug.yaml@main
